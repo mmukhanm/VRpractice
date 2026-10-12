@@ -237,7 +237,7 @@ namespace VRPractice.Editor
             background.spatialBlend=0;background.volume=.35f;background.outputAudioMixerGroup=Group("Music");
             SetupPlayer(cube);
             Directory.CreateDirectory("Assets/Scenes");
-            EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(),path);
+            EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene(),path);
         }
 
         private static GameObject Model(string name,string filename,Vector3 position)

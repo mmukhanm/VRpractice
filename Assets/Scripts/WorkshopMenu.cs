@@ -34,6 +34,7 @@ namespace VRPractice
         private void OnDisable()
         {
             if (vrMenuAction) vrMenuAction.action.performed -= OnVRMenu;
+            if (IsOpen) Time.timeScale = previousTimeScale;
         }
         private void OnVRMenu(InputAction.CallbackContext _) => Toggle();
         private void Bind(Slider slider, string parameter, float initial)

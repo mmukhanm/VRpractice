@@ -20,7 +20,7 @@ for i,n in enumerate(groups):
     ch=children.get(n,[])
     s+='  m_Children:'+ ('\n'+''.join(f'  - {{fileID: {ids[c]}}}\n' for c in ch) if ch else ' []\n')
     s+=f'  m_Volume: {guid(n+"Volume")}\n  m_Pitch: {guid(n+"Pitch")}\n  m_Send: {guid(n+"Send")}\n  m_Effects:\n  - {{fileID: {24400000+i}}}\n  m_UserColorIndex: {i}\n  m_Mute: 0\n  m_Solo: 0\n  m_BypassEffects: 0\n'
-    s+=f'--- !u!244 &{24400000+i}\nAudioMixerEffectController:\n'+common+f'  m_Name: \n  m_EffectID: {guid(n+"Attenuation")}\n  m_EffectName: Attenuation\n  m_MixLevel: {guid(n+"Mix")}\n  m_Parameters: []\n  m_SendTarget: {{fileID: 0}}\n  m_EnableWetMix: 0\n  m_Bypass: 0\n'
+    s+=f'--- !u!244 &{24400000+i}\nAudioMixerEffectController:\n'+common+f'  m_Name:\n  m_EffectID: {guid(n+"Attenuation")}\n  m_EffectName: Attenuation\n  m_MixLevel: {guid(n+"Mix")}\n  m_Parameters: []\n  m_SendTarget: {{fileID: 0}}\n  m_EnableWetMix: 0\n  m_Bypass: 0\n'
 for i,n in enumerate(['Normal','Paused']):
     s+=f'--- !u!245 &{24500000+i}\nAudioMixerSnapshotController:\n'+common+f'  m_Name: {n}\n  m_AudioMixer: {{fileID: 24100000}}\n  m_SnapshotID: {guid(n+"Snapshot")}\n  m_FloatValues:\n'
     for group in groups:
