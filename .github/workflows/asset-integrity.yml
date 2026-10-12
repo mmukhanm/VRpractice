@@ -1,0 +1,11 @@
+name: Asset integrity (not Unity runtime)
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate model containers, indices, textures, WAVs and credits
+        run: python3 Tools/validate_assets.py
+      - name: Validate Python helper syntax
+        run: python3 -m compileall -q Tools

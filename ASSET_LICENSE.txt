@@ -1,0 +1,7 @@
+Original generated meshes and audio listed in CREDITS.txt are dedicated to the
+public domain under Creative Commons CC0 1.0 Universal.
+See LICENSES/CC0-1.0.txt for the full legal text.
+
+The Chair model and its derived textures/LODs retain the upstream CC0 dedication
+by Wayfair, LLC / Eric Chadwick. Unity packages and samples retain their licenses.
+Code and documentation are covered by LICENSE (MIT).

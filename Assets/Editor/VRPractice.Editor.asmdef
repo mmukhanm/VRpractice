@@ -1,0 +1,19 @@
+{
+  "name": "VRPractice.Editor",
+  "rootNamespace": "VRPractice.Editor",
+  "references": [
+    "VRPractice.Runtime",
+    "Unity.InputSystem",
+    "Unity.XR.Interaction.Toolkit",
+    "Unity.XR.CoreUtils",
+    "Unity.RenderPipelines.Core.Runtime",
+    "Unity.RenderPipelines.Universal.Runtime",
+    "Unity.RenderPipelines.Universal.Editor",
+    "UnityEngine.UI",
+    "Unity.RenderPipelines.Core.Editor"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "autoReferenced": true
+}

@@ -1,0 +1,56 @@
+VRpractice — Практическая работа № 6, вариант 4 «Автомастерская»
+Студент: Андижан Мухаммед
+
+EXTERNAL MODEL
+SheenChair — Eric Chadwick / Wayfair, LLC, 2020.
+Source: https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/SheenChair
+License: CC0 1.0 Universal (see Tools/SourceAssets/Chair/UPSTREAM_README.md).
+Original: Tools/SourceAssets/Chair/SheenChair.glb
+SHA256: f0af2a2b102d28d540236306ae19f8fb36842df76bd38cf76f063f9bd2853399
+Derived files: Assets/Models/Chair/Chair.obj, Chair.mtl, Chair_LOD1.obj,
+Chair_LOD1.mtl, Textures/*.png. Normalized to height 0.90 m in source;
+LOD1 decimated to approximately 50%; textures limited to 1024 px.
+No claim that this model represents a specific commercially measured product.
+
+ORIGINAL MODELS
+Author: VRpractice project contributors (procedural assets, created with AI assistance).
+Source: https://github.com/mmukhanm/VRpractice/blob/main/Tools/generate_models.py
+License: CC0 1.0 Universal; see ASSET_LICENSE.txt and LICENSES/CC0-1.0.txt.
+Table — Assets/Models/Table/Table.fbx
+Lamp — Assets/Models/Lamp/Lamp.glb
+Radio — Assets/Models/Radio/Radio.fbx
+Compressor — Assets/Models/Compressor/Compressor.glb
+Car — Assets/Models/Car/Car.fbx
+Wrench — Assets/Models/Wrench/Wrench.fbx
+Fan (animated, 2-second loop) — Assets/Models/Fan/Fan.fbx
+Drone — Assets/Models/Drone/Drone.glb
+All dimensions are authoring targets in metres, not measurements of real products.
+
+ORIGINAL AUDIO
+Author: VRpractice project contributors (procedural synthesis, created with AI assistance).
+Source: https://github.com/mmukhanm/VRpractice/blob/main/Tools/generate_audio.py
+License: CC0 1.0 Universal; no third-party audio recordings or samples used.
+Assets/Audio/Music/WorkshopMusic.wav — 2D background melody
+Assets/Audio/Ambient/RadioLoop.wav — radio melody
+Assets/Audio/Ambient/FanLoop.wav — fan hum
+Assets/Audio/Ambient/MotorLoop.wav — moving drone motor
+Assets/Audio/Ambient/EngineLoop.wav — car engine
+Assets/Audio/Ambient/CompressorLoop.wav — compressor
+Assets/Audio/SFX/Impact1.wav — metallic collision, variation 1
+Assets/Audio/SFX/Impact2.wav — metallic collision, variation 2
+Assets/Audio/SFX/Impact3.wav — metallic collision, variation 3
+Assets/Audio/SFX/Grab.wav — grab feedback
+Assets/Audio/SFX/Release.wav — release feedback
+Assets/Audio/SFX/Switch.wav — activate feedback
+
+DEPENDENCIES / SAMPLES
+Unity URP, XR Interaction Toolkit, Input System, OpenXR, glTFast:
+Unity Technologies, installed from the official Unity package registry.
+Package and sample licenses apply separately; they are not relicensed as CC0.
+XR Device Simulator and XRI Default Input Actions are copied from the installed
+XRI 2.5.4 Samples~ directory at editor setup, including their original metadata.
+See Packages/manifest.json and the individual installed package LICENSE files.
+
+Scripts are original implementation with AI assistance, not a borrowed demo scene.
+Study Docs/script-guide.md before defending the work; no claim of independent
+student authorship, successful oral defence, or runtime/headphone verification.

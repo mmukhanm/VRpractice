@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Table",
+    "file": "Assets/Models/Table/Table.fbx",
+    "format": "fbx",
+    "dimensions_blender_xyz": [
+      1.8,
+      0.75,
+      0.9
+    ],
+    "dimensions_unity_xyz": [
+      1.8,
+      0.9,
+      0.75
+    ],
+    "triangles": 648,
+    "materials": 2,
+    "scale_factor": 1
+  },
+  {
+    "name": "Chair",
+    "file": "Assets/Models/Chair/Chair.obj",
+    "format": "obj",
+    "dimensions_blender_xyz": [
+      1.084,
+      0.7479,
+      0.9
+    ],
+    "dimensions_unity_xyz": [
+      1.084,
+      0.9,
+      0.7479
+    ],
+    "triangles": 39936,
+    "materials": 4,
+    "scale_factor": 1
+  },
+  {
+    "name": "Chair",
+    "file": "Assets/Models/Chair/Chair_LOD1.obj",
+    "format": "obj",
+    "dimensions_blender_xyz": [
+      1.0839,
+      0.7479,
+      0.9001
+    ],
+    "dimensions_unity_xyz": [
+      1.0839,
+      0.9001,
+      0.7479
+    ],
+    "triangles": 19966,
+    "materials": 4,
+    "scale_factor": 1
+  },
+  {
+    "name": "Lamp",
+    "file": "Assets/Models/Lamp/Lamp.glb",
+    "format": "glb",
+    "dimensions_blender_xyz": [
+      0.32,
+      0.32,
+      0.64
+    ],
+    "dimensions_unity_xyz": [
+      0.32,
+      0.64,
+      0.32
+    ],
+    "triangles": 308,
+    "materials": 2,
+    "scale_factor": 1
+  },
+  {
+    "name": "Radio",
+    "file": "Assets/Models/Radio/Radio.fbx",
+    "format": "fbx",
+    "dimensions_blender_xyz": [
+      0.36,
+      0.1725,
+      0.3125
+    ],
+    "dimensions_unity_xyz": [
+      0.36,
+      0.3125,
+      0.1725
+    ],
+    "triangles": 492,
+    "materials": 3,
+    "scale_factor": 1
+  },
+  {
+    "name": "Compressor",
+    "file": "Assets/Models/Compressor/Compressor.glb",
+    "format": "glb",
+    "dimensions_blender_xyz": [
+      0.9,
+      0.44,
+      0.88
+    ],
+    "dimensions_unity_xyz": [
+      0.9,
+      0.88,
+      0.44
+    ],
+    "triangles": 416,
+    "materials": 3,
+    "scale_factor": 1
+  },
+  {
+    "name": "Car",
+    "file": "Assets/Models/Car/Car.fbx",
+    "format": "fbx",
+    "dimensions_blender_xyz": [
+      2.02,
+      4.08,
+      1.45
+    ],
+    "dimensions_unity_xyz": [
+      2.02,
+      1.45,
+      4.08
+    ],
+    "triangles": 1532,
+    "materials": 5,
+    "scale_factor": 1
+  },
+  {
+    "name": "Wrench",
+    "file": "Assets/Models/Wrench/Wrench.fbx",
+    "format": "fbx",
+    "dimensions_blender_xyz": [
+      0.104,
+      0.375,
+      0.026
+    ],
+    "dimensions_unity_xyz": [
+      0.104,
+      0.026,
+      0.375
+    ],
+    "triangles": 476,
+    "materials": 1,
+    "scale_factor": 1
+  },
+  {
+    "name": "Fan",
+    "file": "Assets/Models/Fan/Fan.fbx",
+    "format": "fbx",
+    "dimensions_blender_xyz": [
+      0.56,
+      0.4,
+      1.18
+    ],
+    "dimensions_unity_xyz": [
+      0.56,
+      1.18,
+      0.4
+    ],
+    "triangles": 804,
+    "materials": 2,
+    "scale_factor": 1
+  },
+  {
+    "name": "Drone",
+    "file": "Assets/Models/Drone/Drone.glb",
+    "format": "glb",
+    "dimensions_blender_xyz": [
+      0.82,
+      0.7,
+      0.18
+    ],
+    "dimensions_unity_xyz": [
+      0.82,
+      0.18,
+      0.7
+    ],
+    "triangles": 908,
+    "materials": 2,
+    "scale_factor": 1
+  }
+]

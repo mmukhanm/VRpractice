@@ -1,0 +1,43 @@
+# Blender 4.3.2 MTL File: 'None'
+# www.blender.org
+
+newmtl fabric_Mystere_Mango_Velvet
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd Textures/Image_2.png
+map_Bump -bm 0.600000 Textures/Chair_Normal.png
+
+newmtl label
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd Textures/Image_5.png
+
+newmtl metal
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.280000 0.260000 0.230000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl wood_Brown
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd Textures/Image_3.png

@@ -1,0 +1,11 @@
+{
+  "name": "VRPractice.Runtime",
+  "rootNamespace": "VRPractice",
+  "references": [
+    "Unity.InputSystem",
+    "Unity.XR.Interaction.Toolkit",
+    "Unity.XR.CoreUtils",
+    "UnityEngine.UI"
+  ],
+  "autoReferenced": true
+}
