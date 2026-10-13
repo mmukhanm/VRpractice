@@ -30,6 +30,7 @@ namespace VRPractice.Editor
     public static class WorkshopBuilder
     {
         private const string Generated = "Assets/Generated";
+        private const string SetupVersion = "Unity 6000.6.0f1 / URP 17.6.0 / XRI 2.6.5";
         public const string CommonScene = "Assets/Scenes/Import_Audio_Андижан.unity";
         public const string VariantScene = "Assets/Scenes/Variant_Андижан.unity";
         private static AudioMixer mixer;
@@ -41,8 +42,13 @@ namespace VRPractice.Editor
         {
             EditorApplication.delayCall += () =>
             {
-                if (Application.isBatchMode || EditorApplication.isPlayingOrWillChangePlaymode ||
-                    File.Exists(Generated + "/SetupComplete.txt")) return;
+                if (Application.isBatchMode || EditorApplication.isPlayingOrWillChangePlaymode) return;
+                if (File.Exists(Generated + "/SetupComplete.txt"))
+                {
+                    if (!File.ReadAllText(Generated + "/SetupComplete.txt").Contains(SetupVersion))
+                        Debug.Log("VR Practice: project upgraded to " + SetupVersion + ". Save your scene changes, then run VR Practice/Build workshop scenes to refresh generated assets.");
+                    return; // Never overwrite existing user scenes automatically during an upgrade.
+                }
                 try { Build(); }
                 catch (Exception error) { Debug.LogException(error); }
             };
@@ -86,7 +92,7 @@ namespace VRPractice.Editor
             CreateScene(VariantScene, true);
             EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(VariantScene, true), new EditorBuildSettingsScene(CommonScene, true) };
             AssetDatabase.SaveAssets();
-            File.WriteAllText(Generated + "/SetupComplete.txt", "Workshop built from committed source assets.\n");
+            File.WriteAllText(Generated + "/SetupComplete.txt", SetupVersion + "\nWorkshop built from committed source assets.\n");
             AssetDatabase.Refresh();
             EditorSceneManager.OpenScene(VariantScene);
             Debug.Log("VR Practice: both scenes built. Run VR Practice/Validate scenes, then Play.");
@@ -446,9 +452,9 @@ namespace VRPractice.Editor
             foreach(string path in new[]{CommonScene,VariantScene})
             {
                 EditorSceneManager.OpenScene(path);
-                if(Object.FindObjectsOfType<AudioListener>().Length!=1)throw new InvalidOperationException(path+": expected exactly one listener.");
-                if(!Object.FindObjectOfType<XROrigin>())throw new InvalidOperationException("Missing XR Origin");
-                foreach(var source in Object.FindObjectsOfType<AudioSource>())
+                if(Object.FindObjectsByType<AudioListener>(FindObjectsSortMode.None).Length!=1)throw new InvalidOperationException(path+": expected exactly one listener.");
+                if(!Object.FindFirstObjectByType<XROrigin>())throw new InvalidOperationException("Missing XR Origin");
+                foreach(var source in Object.FindObjectsByType<AudioSource>(FindObjectsSortMode.None))
                 {
                     if(!source.outputAudioMixerGroup)throw new InvalidOperationException("Unrouted AudioSource: "+source.name);
                     if(source.spatialBlend==1 && source.clip)
@@ -457,10 +463,10 @@ namespace VRPractice.Editor
                         if(!importer.forceToMono)throw new InvalidOperationException("3D clip is not forced mono: "+source.clip.name);
                     }
                 }
-                foreach(var grab in Object.FindObjectsOfType<XRGrabInteractable>())
+                foreach(var grab in Object.FindObjectsByType<XRGrabInteractable>(FindObjectsSortMode.None))
                     if(!grab.GetComponent<Rigidbody>() || grab.GetComponentsInChildren<Collider>().Length==0 || !grab.GetComponent<ImpactSound>())throw new InvalidOperationException("Incomplete grab: "+grab.name);
-                if(Object.FindObjectOfType<LODGroup>().lodCount!=3)throw new InvalidOperationException("Expected 3 LOD levels");
-                foreach(var root in Object.FindObjectsOfType<Transform>().Where(t=>t.name.EndsWith(" imported mesh")))
+                if(Object.FindFirstObjectByType<LODGroup>().lodCount!=3)throw new InvalidOperationException("Expected 3 LOD levels");
+                foreach(var root in Object.FindObjectsByType<Transform>(FindObjectsSortMode.None).Where(t=>t.name.EndsWith(" imported mesh")))
                     if(root.localScale!=Vector3.one || root.localRotation!=Quaternion.identity)throw new InvalidOperationException("Model transform correction: "+root.name);
             }
             Debug.Log("Scene validation passed: XR origin, one listener, mono 3D sources, routing, grabs and 3 LOD levels.");

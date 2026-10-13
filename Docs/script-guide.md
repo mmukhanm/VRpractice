@@ -6,7 +6,7 @@ RequireComponent гарантирует Rigidbody и AudioSource. Awake полу
 
 ## InteractableAudio.cs / AudioSwitch.cs
 
-OnEnable подписывает методы на selectEntered/selectExited/activated, OnDisable снимает ровно те же подписки. Параметры событий соответствуют XR Toolkit 2.5.4. Feedback и loop — разные AudioSource, поэтому сигнал захвата/включения не прерывает музыку. Радио включается/выключается по trigger, если оно выбрано; источник остаётся дочерним самому переносимому объекту. Для неподвижного двигателя используется XRSimpleInteractable, для предметов — XRGrabInteractable. Методы public также вызываются резервным управлением ПК.
+OnEnable подписывает методы на selectEntered/selectExited/activated, OnDisable снимает ровно те же подписки. Параметры событий соответствуют XR Toolkit 2.6.5. Feedback и loop — разные AudioSource, поэтому сигнал захвата/включения не прерывает музыку. Радио включается/выключается по trigger, если оно выбрано; источник остаётся дочерним самому переносимому объекту. Для неподвижного двигателя используется XRSimpleInteractable, для предметов — XRGrabInteractable. Методы public также вызываются резервным управлением ПК.
 
 ## OrbitingSource.cs
 

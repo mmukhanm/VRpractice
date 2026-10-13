@@ -48,7 +48,7 @@ Unity URP, XR Interaction Toolkit, Input System, OpenXR, glTFast:
 Unity Technologies, installed from the official Unity package registry.
 Package and sample licenses apply separately; they are not relicensed as CC0.
 XR Device Simulator and XRI Default Input Actions are copied from the installed
-XRI 2.5.4 Samples~ directory at editor setup, including their original metadata.
+XRI 2.6.5 Samples~ directory at editor setup, including their original metadata.
 See Packages/manifest.json and the individual installed package LICENSE files.
 
 Scripts are original implementation with AI assistance, not a borrowed demo scene.

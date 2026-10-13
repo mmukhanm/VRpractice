@@ -31,8 +31,8 @@ namespace VRPractice.Tests
         public void BuiltScenesHaveOneListenerAndSafeGrabs()
         {
             WorkshopBuilder.ValidateScenes();
-            Assert.That(Object.FindObjectsOfType<XRGrabInteractable>().Length,Is.GreaterThanOrEqualTo(6));
-            foreach(var grab in Object.FindObjectsOfType<XRGrabInteractable>())
+            Assert.That(Object.FindObjectsByType<XRGrabInteractable>(FindObjectsSortMode.None).Length,Is.GreaterThanOrEqualTo(6));
+            foreach(var grab in Object.FindObjectsByType<XRGrabInteractable>(FindObjectsSortMode.None))
                 foreach(var collider in grab.GetComponentsInChildren<MeshCollider>()) Assert.That(collider.convex,Is.True);
         }
 
@@ -92,7 +92,7 @@ namespace VRPractice.Tests
             Assert.That(fan.rolloffMode,Is.EqualTo(AudioRolloffMode.Custom));Assert.That(fan.maxDistance,Is.EqualTo(4));
             Assert.That(fan.spread,Is.EqualTo(90));
             Assert.That(fan.GetCustomCurve(AudioSourceCurveType.CustomRolloff).Evaluate(1),Is.Zero);
-            var moving=Object.FindObjectOfType<OrbitingSource>();Assert.That(moving.speed,Is.InRange(8,10));
+            var moving=Object.FindFirstObjectByType<OrbitingSource>();Assert.That(moving.speed,Is.InRange(8,10));
             Assert.That(moving.radius,Is.EqualTo(5));Assert.That(moving.GetComponent<AudioSource>().dopplerLevel,Is.EqualTo(1));
         }
     }

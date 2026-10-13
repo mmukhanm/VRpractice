@@ -105,7 +105,7 @@ namespace VRPractice
             heldAudio?.Released();
             held.isKinematic = originalKinematic;
             held.collisionDetectionMode = originalCollisionMode;
-            if (!originalKinematic) held.velocity = throwObject ? head.transform.forward * 5 : Vector3.zero;
+            if (!originalKinematic) held.linearVelocity = throwObject ? head.transform.forward * 5 : Vector3.zero;
             held = null; heldAudio = null;
         }
         private void OnGUI()
