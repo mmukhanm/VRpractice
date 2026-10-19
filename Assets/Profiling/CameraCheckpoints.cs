@@ -23,8 +23,9 @@ namespace VRPractice.Profiling
 
         public void GoTo(int index)
         {
-            if (!origin || points == null || index < 1 || index > points.Length) return;
+            if (!origin || !origin.Camera || points == null || index < 1 || index > points.Length) return;
             var point = points[index - 1];
+            if (!point) return;
             var controller = origin.GetComponent<CharacterController>();
             var desktop = origin.GetComponent<DesktopWorkshopController>();
             desktop?.PrepareForTeleport();
@@ -33,8 +34,14 @@ namespace VRPractice.Profiling
             bool wasEnabled = controller && controller.enabled;
             if (controller) controller.enabled = false;
             float height = Mathf.Max(.1f, origin.Camera.transform.position.y - origin.transform.position.y);
-            origin.MatchOriginUpCameraForward(Vector3.up, point.forward);
-            origin.MoveCameraToWorldLocation(point.position + Vector3.up * height);
+            // Rotate around the tracked head so its room-scale offset does not move it.
+            var head = origin.Camera.transform;
+            var forward = Vector3.ProjectOnPlane(head.forward, Vector3.up);
+            var targetForward = Vector3.ProjectOnPlane(point.forward, Vector3.up);
+            if (forward.sqrMagnitude > .0001f && targetForward.sqrMagnitude > .0001f)
+                origin.transform.RotateAround(head.position, Vector3.up,
+                    Vector3.SignedAngle(forward, targetForward, Vector3.up));
+            origin.transform.position += point.position + Vector3.up * height - head.position;
             if (controller) controller.enabled = wasEnabled;
             Physics.SyncTransforms();
             desktop?.SynchronizeViewRotation();

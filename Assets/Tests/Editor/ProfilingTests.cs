@@ -11,6 +11,36 @@ namespace VRPractice.Tests
 {
     public sealed class ProfilingTests
     {
+        [TestCase(90f)]
+        [TestCase(-135f)]
+        public void CheckpointMovesOffsetHeadAndMatchesHorizontalGaze(float heading)
+        {
+            var rig = new GameObject("Checkpoint test rig");
+            var target = new GameObject("Checkpoint test target");
+            try
+            {
+                var head = new GameObject("Tracked head");
+                head.transform.SetParent(rig.transform, false);
+                head.transform.localPosition = new Vector3(.6f, 1.7f, -.4f);
+                head.transform.localRotation = Quaternion.Euler(20f, 35f, 0f);
+                var origin = rig.AddComponent<Unity.XR.CoreUtils.XROrigin>();
+                origin.Camera = head.AddComponent<Camera>();
+                target.transform.SetPositionAndRotation(new Vector3(4f, 0f, 7f),
+                    Quaternion.Euler(0f, heading, 0f));
+                var checkpoints = rig.AddComponent<CameraCheckpoints>();
+                checkpoints.origin = origin;
+                checkpoints.points = new[] { target.transform };
+
+                checkpoints.GoTo(1);
+
+                Assert.That(Vector3.Distance(head.transform.position,
+                    target.transform.position + Vector3.up * 1.7f), Is.LessThan(.001f));
+                Assert.That(Vector3.Angle(Vector3.ProjectOnPlane(head.transform.forward, Vector3.up),
+                    target.transform.forward), Is.LessThan(.01f));
+            }
+            finally { Object.DestroyImmediate(rig); Object.DestroyImmediate(target); }
+        }
+
         [Test]
         public void StressGridIsRepeatableAndInsideTwentyMetreZone()
         {

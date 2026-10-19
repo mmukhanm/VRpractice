@@ -1,0 +1,58 @@
+--- a/Editor/Debugger/XRInputDevicesTreeView.cs
++++ b/Editor/Debugger/XRInputDevicesTreeView.cs
+@@ -1,3 +1,7 @@
++// Unity 6000.6: use the generic IMGUI tree API with the existing integer row IDs.
++using TreeView = UnityEditor.IMGUI.Controls.TreeView<int>;
++using TreeViewState = UnityEditor.IMGUI.Controls.TreeViewState<int>;
++using TreeViewItem = UnityEditor.IMGUI.Controls.TreeViewItem<int>;
+ using System;
+ using System.Collections.Generic;
+ using UnityEditor.IMGUI.Controls;
+--- a/Editor/Debugger/XRInteractablesTreeView.cs
++++ b/Editor/Debugger/XRInteractablesTreeView.cs
+@@ -1,3 +1,7 @@
++// Unity 6000.6: use the generic IMGUI tree API with the existing integer row IDs.
++using TreeView = UnityEditor.IMGUI.Controls.TreeView<int>;
++using TreeViewState = UnityEditor.IMGUI.Controls.TreeViewState<int>;
++using TreeViewItem = UnityEditor.IMGUI.Controls.TreeViewItem<int>;
+ using System.Collections.Generic;
+ using UnityEditor.IMGUI.Controls;
+ using UnityEngine;
+--- a/Editor/Debugger/XRInteractionDebuggerWindow.cs
++++ b/Editor/Debugger/XRInteractionDebuggerWindow.cs
+@@ -1,3 +1,5 @@
++// Unity 6000.6: use the generic IMGUI tree API with the existing integer row IDs.
++using TreeViewState = UnityEditor.IMGUI.Controls.TreeViewState<int>;
+ using System;
+ using System.Collections.Generic;
+ using System.Text;
+--- a/Editor/Debugger/XRInteractorsTreeView.cs
++++ b/Editor/Debugger/XRInteractorsTreeView.cs
+@@ -1,3 +1,7 @@
++// Unity 6000.6: use the generic IMGUI tree API with the existing integer row IDs.
++using TreeView = UnityEditor.IMGUI.Controls.TreeView<int>;
++using TreeViewState = UnityEditor.IMGUI.Controls.TreeViewState<int>;
++using TreeViewItem = UnityEditor.IMGUI.Controls.TreeViewItem<int>;
+ using System.Collections.Generic;
+ using UnityEditor.IMGUI.Controls;
+ using UnityEngine;
+--- a/Editor/Debugger/XRTargetEvaluatorsScoreTreeView.cs
++++ b/Editor/Debugger/XRTargetEvaluatorsScoreTreeView.cs
+@@ -1,3 +1,7 @@
++// Unity 6000.6: use the generic IMGUI tree API with the existing integer row IDs.
++using TreeView = UnityEditor.IMGUI.Controls.TreeView<int>;
++using TreeViewState = UnityEditor.IMGUI.Controls.TreeViewState<int>;
++using TreeViewItem = UnityEditor.IMGUI.Controls.TreeViewItem<int>;
+ using System.Collections.Generic;
+ using UnityEditor.IMGUI.Controls;
+ using UnityEngine;
+--- a/Editor/Debugger/XRTargetFiltersTreeView.cs
++++ b/Editor/Debugger/XRTargetFiltersTreeView.cs
+@@ -1,3 +1,7 @@
++// Unity 6000.6: use the generic IMGUI tree API with the existing integer row IDs.
++using TreeView = UnityEditor.IMGUI.Controls.TreeView<int>;
++using TreeViewState = UnityEditor.IMGUI.Controls.TreeViewState<int>;
++using TreeViewItem = UnityEditor.IMGUI.Controls.TreeViewItem<int>;
+ using System.Collections.Generic;
+ using UnityEditor.IMGUI.Controls;
+ using UnityEngine;

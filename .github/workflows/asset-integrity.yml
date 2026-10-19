@@ -5,6 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Verify embedded XRI source and reviewed Unity 6000.6 patch
+        run: |
+          curl --fail --location --retry 3 --max-time 120 https://download.packages.unity.com/com.unity.xr.interaction.toolkit/-/com.unity.xr.interaction.toolkit-2.6.5.tgz --output "$RUNNER_TEMP/xri-2.6.5.tgz"
+          python3 Tools/verify_xri_vendor.py "$RUNNER_TEMP/xri-2.6.5.tgz"
       - name: Validate model containers, indices, textures, WAVs and credits
         run: python3 Tools/validate_assets.py
       - name: Validate Python helper syntax

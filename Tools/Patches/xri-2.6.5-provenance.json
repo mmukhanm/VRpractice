@@ -1,0 +1,18 @@
+{
+  "url": "https://download.packages.unity.com/com.unity.xr.interaction.toolkit/-/com.unity.xr.interaction.toolkit-2.6.5.tgz",
+  "sha1": "f5db334b53fbd365ae6ede73801832862668e022",
+  "sha256": "a55a09597cd71930b0da5c4f0cd7cd9ea00b4369159ce3f7b226bad370ce7419",
+  "omitted": [
+    "Documentation~",
+    "Tests",
+    "Tests.meta"
+  ],
+  "changed": [
+    "Editor/Debugger/XRInputDevicesTreeView.cs",
+    "Editor/Debugger/XRInteractablesTreeView.cs",
+    "Editor/Debugger/XRInteractionDebuggerWindow.cs",
+    "Editor/Debugger/XRInteractorsTreeView.cs",
+    "Editor/Debugger/XRTargetEvaluatorsScoreTreeView.cs",
+    "Editor/Debugger/XRTargetFiltersTreeView.cs"
+  ]
+}
