@@ -10,6 +10,9 @@ SHA256: f0af2a2b102d28d540236306ae19f8fb36842df76bd38cf76f063f9bd2853399
 Derived files: Assets/Models/Chair/Chair.obj, Chair.mtl, Chair_LOD1.obj,
 Chair_LOD1.mtl, Textures/*.png. Normalized to height 0.90 m in source;
 LOD1 decimated to approximately 50%; textures limited to 1024 px.
+Profiling derivative: Assets/Models/Chair/Chair_Profiling.obj, simplified by
+Tools/generate_profiling_model.py to 2–5k triangles; CC0, same upstream author.
+See Docs/profiling-model.json for triangle count and source hash.
 No claim that this model represents a specific commercially measured product.
 
 ORIGINAL MODELS
@@ -50,7 +53,12 @@ Package and sample licenses apply separately; they are not relicensed as CC0.
 XR Device Simulator and XRI Default Input Actions are copied from the installed
 XRI 2.6.5 Samples~ directory at editor setup, including their original metadata.
 See Packages/manifest.json and the individual installed package LICENSE files.
+Unity Profile Analyzer 1.4.2 — Unity Technologies, official Unity registry;
+its own installed package license applies. Optional Excel helper uses openpyxl
+(MIT): https://openpyxl.readthedocs.io/ — dependency is not vendored here.
 
-Scripts are original implementation with AI assistance, not a borrowed demo scene.
+Project scripts were created with AI assistance, not taken from a demo scene.
+Exception: Assets/Profiling/BadBehaviour.cs is reproduced unchanged from the
+user-provided profiling assignment; original author/license were not specified.
 Study Docs/script-guide.md before defending the work; no claim of independent
 student authorship, successful oral defence, or runtime/headphone verification.

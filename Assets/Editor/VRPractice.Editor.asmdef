@@ -10,7 +10,9 @@
     "Unity.RenderPipelines.Universal.Runtime",
     "Unity.RenderPipelines.Universal.Editor",
     "UnityEngine.UI",
-    "Unity.RenderPipelines.Core.Editor"
+    "Unity.RenderPipelines.Core.Editor",
+    "VRPractice.Profiling",
+    "Unity.Collections"
   ],
   "includePlatforms": [
     "Editor"

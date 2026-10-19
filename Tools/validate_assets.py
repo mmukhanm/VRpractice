@@ -56,6 +56,16 @@ for p in (ROOT/'Assets/Models/Chair/Textures').glob('*.png'):
 source=ROOT/'Tools/SourceAssets/Chair/SheenChair.glb'
 check(hashlib.sha256(source.read_bytes()).hexdigest()=='f0af2a2b102d28d540236306ae19f8fb36842df76bd38cf76f063f9bd2853399','source model changed')
 for p in [ROOT/'Packages/manifest.json',*ROOT.glob('Assets/**/*.asmdef')]:json.loads(p.read_text())
+profiling_metadata=ROOT/'Docs/profiling-model.json'
+if profiling_metadata.exists():
+    record=json.loads(profiling_metadata.read_text())
+    check(hashlib.sha256((ROOT/record['source']).read_bytes()).hexdigest()==record['source_sha256'],'profiling model source changed; regenerate deliberately')
+    model=ROOT/record['file'];lines=model.read_text().splitlines()
+    vertex_count=sum(line.startswith('v ') for line in lines)
+    faces=[line.split()[1:] for line in lines if line.startswith('f ')]
+    check(2000<=len(faces)<=5000 and len(faces)==record['triangles'],'profiling model must have 2–5k triangles')
+    check(all(len(face)==3 and all(1<=int(v.split('/')[0])<=vertex_count for v in face) for face in faces),'profiling OBJ indices invalid')
+    check(record['file'] in credits,'profiling model missing credit')
 check((ROOT/'Assets/Audio/MainMixer.mixer').read_text().count('AudioMixerSnapshotController:')==2,'two snapshots required')
 print(f'PASS: {checks} asset integrity checks; {len(inventory)} model imports, {len(wav_paths)} WAV clips.')
 print('Not a Unity compile, scene, performance, or listening test.')

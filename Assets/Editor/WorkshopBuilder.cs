@@ -30,7 +30,7 @@ namespace VRPractice.Editor
     public static class WorkshopBuilder
     {
         private const string Generated = "Assets/Generated";
-        private const string SetupVersion = "Unity 6000.6.0f1 / URP 17.6.0 / XRI 2.6.5";
+        private const string SetupVersion = "Unity 6000.6.0f1 / URP 17.6.0 / XRI 2.6.5 / Profiling 1";
         public const string CommonScene = "Assets/Scenes/Import_Audio_Андижан.unity";
         public const string VariantScene = "Assets/Scenes/Variant_Андижан.unity";
         private static AudioMixer mixer;
@@ -90,7 +90,8 @@ namespace VRPractice.Editor
             ConfigureFanImport();
             CreateScene(CommonScene, false);
             CreateScene(VariantScene, true);
-            EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(VariantScene, true), new EditorBuildSettingsScene(CommonScene, true) };
+            if (!File.Exists(ProfilingSceneBuilder.ScenePath)) ProfilingSceneBuilder.BuildFromVariant();
+            EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(VariantScene, true), new EditorBuildSettingsScene(CommonScene, true), new EditorBuildSettingsScene(ProfilingSceneBuilder.ScenePath, true) };
             AssetDatabase.SaveAssets();
             File.WriteAllText(Generated + "/SetupComplete.txt", SetupVersion + "\nWorkshop built from committed source assets.\n");
             AssetDatabase.Refresh();

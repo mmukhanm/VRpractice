@@ -1,7 +1,18 @@
 {
   "name": "VRPractice.Tests",
-  "references": ["VRPractice.Runtime", "VRPractice.Editor", "Unity.XR.Interaction.Toolkit", "Unity.XR.CoreUtils", "Unity.InputSystem"],
-  "includePlatforms": ["Editor"],
-  "optionalUnityReferences": ["TestAssemblies"],
+  "references": [
+    "VRPractice.Runtime",
+    "VRPractice.Editor",
+    "Unity.XR.Interaction.Toolkit",
+    "Unity.XR.CoreUtils",
+    "Unity.InputSystem",
+    "VRPractice.Profiling"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
   "autoReferenced": false
 }

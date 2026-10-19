@@ -9,3 +9,7 @@ jobs:
         run: python3 Tools/validate_assets.py
       - name: Validate Python helper syntax
         run: python3 -m compileall -q Tools
+      - name: Install Excel report dependency
+        run: python3 -m pip install -r Tools/profiling-requirements.txt
+      - name: Test CSV analysis and Excel chart without fabricating Unity results
+        run: python3 -m unittest discover -s Tools -p 'test_analyze_profiling.py' -v

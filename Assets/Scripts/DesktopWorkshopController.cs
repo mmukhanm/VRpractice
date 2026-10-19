@@ -16,6 +16,7 @@ namespace VRPractice
         public GameObject controllerRoot;
         public UnityEngine.InputSystem.XR.TrackedPoseDriver headTracking;
         public float speed = 2.5f;
+        public bool showHud = true;
         private CharacterController character;
         private Rigidbody held;
         private InteractableAudio heldAudio;
@@ -108,8 +109,16 @@ namespace VRPractice
             if (!originalKinematic) held.linearVelocity = throwObject ? head.transform.forward * 5 : Vector3.zero;
             held = null; heldAudio = null;
         }
+        public void PrepareForTeleport() => Release(false);
+        public void SynchronizeViewRotation()
+        {
+            yaw = transform.eulerAngles.y;
+            pitch = Mathf.DeltaAngle(0, head.transform.localEulerAngles.x);
+            verticalSpeed = 0;
+        }
         private void OnGUI()
         {
+            if (!showHud) return;
             if (menu && menu.IsOpen) return;
             GUI.color = new Color(.02f, .06f, .09f, .92f);
             GUI.DrawTexture(new Rect(18,18,540,82), Texture2D.whiteTexture);

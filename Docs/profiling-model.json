@@ -1,0 +1,11 @@
+{
+  "source": "Assets/Models/Chair/Chair.obj",
+  "source_sha256": "1b81821e0395aceb8ad7fc87fd1142d78b77bc1bf893c2d0ae2cdad5d31a0524",
+  "file": "Assets/Models/Chair/Chair_Profiling.obj",
+  "triangles": 2993,
+  "decimate_ratio": 0.075,
+  "author": "Eric Chadwick / Wayfair, LLC",
+  "license": "CC0-1.0",
+  "stress_mesh_longest_edge_m": 0.35,
+  "note": "Editor combines this derived chair into a single-renderer workload, with one shared material and 0.35 m longest edge. Original practice-6 scene is unchanged."
+}
