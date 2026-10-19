@@ -5,7 +5,9 @@
   "omitted": [
     "Documentation~",
     "Tests",
-    "Tests.meta"
+    "Tests.meta",
+    ".signature",
+    ".attestation.p7m"
   ],
   "changed": [
     "Editor/Debugger/XRInputDevicesTreeView.cs",
